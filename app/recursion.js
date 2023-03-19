@@ -18,6 +18,7 @@ exports.recursionAnswers = {
               files.push(data.files[i]);
               for (let j = 0; j < data.files[i].length; j++)
                 traverseFiles(data.files[j]);
+                // break;
             }
           } else {
             traverseFiles(data.files[i], dirName);
