@@ -4,31 +4,24 @@ exports = typeof window === "undefined" ? global : window;
 
 exports.recursionAnswers = {
   listFiles: function (data, dirName) {
-    let files = [];
-    function traverseFiles(data, dirName) {
-      if (!data) {
-        return;
-      }
-      if (data.files) {
-        for (let i = 0; i < data.files.length; i++) {
-          if (typeof data.files[i] === "string") {
-            if (!dirName) {
-              files.push(data.files[i]);
-            } else if (data.dir === dirName) {
-              files.push(data.files[i]);
-              for (let j = 0; j < data.files[i].length; j++)
-                traverseFiles(data.files[j]);
-                // break;
-            }
-          } else {
-            traverseFiles(data.files[i], dirName);
+    const listOfFiles = [];
+    const dirs = [];
+    function traverseFiles(dir) {
+      const files = dir.files;
+      dirs.push(dir.dir);
+      for (let i = 0; i < files.length; i++) {
+        if (typeof files[i] === "string") {
+          if (!dirName || dirs.indexOf(dirName) > -1) {
+            listOfFiles.push(files[i]);
           }
+        } else {
+          traverseFiles(files[i]);
         }
       }
+      dirs.pop();
     }
-
-    traverseFiles(data, dirName);
-    return files;
+    traverseFiles(data);
+    return listOfFiles;
   },
 
   permute: function (arr) {

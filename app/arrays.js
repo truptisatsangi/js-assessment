@@ -28,7 +28,7 @@ exports.arraysAnswers = {
 
   removeWithoutCopy: function (arr, item) {
     // The splice() method in JavaScript is often used to in-place add or remove elements from an array.
-    Array.prototype.remove = function (value) {
+    Array.prototype.remove = function (value) { // It can be done without prototype as well
       for (let i = this.length; i > 0; i--) {
         if (this[i] === value) {
           this.splice(i, 1);
