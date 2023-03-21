@@ -1,5 +1,3 @@
-// const { object } = require("underscore");
-
 exports = typeof window === "undefined" ? global : window;
 
 exports.recursionAnswers = {

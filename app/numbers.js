@@ -11,22 +11,22 @@ exports.numbersAnswers = {
   },
 
   convertToBinary: function (num) {
-    
-    return (num.toString(2).padStart(8, '0'));
+    return num.toString(2).padStart(8, "0");
   },
 
   multiply: function (a, b) {
-    let la = 0,
-    lb = 0;
-  if (!Number.isInteger(a)) {
-    la = a.toString().split(".")[1].length;
-  }
-  if (!Number.isInteger(b)) {
-    lb = b.toString().split(".")[1].length;
-  }
-  
-  const l = Math.max(la, lb);
-  
-  return(parseFloat((a * b).toFixed(l)));
+    let digitsAfterDecimalOfa = 0;
+    let digitsAfterDecimalOfb = 0;
+
+    if (!Number.isInteger(a)) {
+      digitsAfterDecimalOfa = a.toString().split(".")[1].length;
+    }
+    if (!Number.isInteger(b)) {
+      digitsAfterDecimalOfb = b.toString().split(".")[1].length;
+    }
+
+    const l = Math.max(digitsAfterDecimalOfa, digitsAfterDecimalOfb);
+
+    return parseFloat((a * b).toFixed(l));
   },
 };

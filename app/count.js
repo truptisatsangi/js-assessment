@@ -8,7 +8,6 @@ exports.countAnswers = {
     function printCurrentNumber() {
       console.log(current);
       current++;
-
       if (current <= end) {
         timeoutId = setTimeout(printCurrentNumber, 100);
       }

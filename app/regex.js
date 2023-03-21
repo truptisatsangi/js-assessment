@@ -2,7 +2,6 @@ exports = typeof window === "undefined" ? global : window;
 
 exports.regexAnswers = {
   containsNumber: function (str) {
-    // return str.match("d+/g");
     const regex = /\d+/g;
     return regex.test(str);
   },
@@ -25,14 +24,12 @@ exports.regexAnswers = {
   },
 
   matchesPattern: function (str) {
-    // XXX-XXX-XXXX
-    const regex = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/
+    const regex = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
     return regex.test(str);
   },
 
   isUSD: function (str) {
-    // $132.03'
-    const regex = /^\$\d{1,3}(,\d{3})*(\.\d{2})?$/ ;
+    const regex = /^\$\d{1,3}(,\d{3})*(\.\d{2})?$/;
     return regex.test(str);
   },
 };

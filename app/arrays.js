@@ -27,8 +27,7 @@ exports.arraysAnswers = {
   },
 
   removeWithoutCopy: function (arr, item) {
-    // The splice() method in JavaScript is often used to in-place add or remove elements from an array.
-    Array.prototype.remove = function (value) { // It can be done without prototype as well
+    Array.prototype.remove = function (value) {
       for (let i = this.length; i > 0; i--) {
         if (this[i] === value) {
           this.splice(i, 1);
@@ -61,7 +60,6 @@ exports.arraysAnswers = {
   },
 
   concat: function (arr1, arr2) {
-    // return result = arr1.concat(arr2);
     const result = arr1;
     let j = 0;
     let l = arr2.length + arr1.length;

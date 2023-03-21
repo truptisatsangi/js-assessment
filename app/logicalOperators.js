@@ -1,17 +1,11 @@
-exports = typeof window === 'undefined' ? global : window;
+exports = typeof window === "undefined" ? global : window;
 
 exports.logicalOperatorsAnswers = {
-  or: function(a, b) {
-    if(a || b){
-      return true;
-    }
-    return false;
+  or: function (a, b) {
+    return a || b;
   },
 
-  and: function(a, b) {
-    if(a && b){
-      return true;
-    }
-    return false;
-  }
+  and: function (a, b) {
+    return a && b;
+  },
 };

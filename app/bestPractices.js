@@ -12,7 +12,6 @@ exports.bestPracticesAnswers = {
     const myObject = {
       name: "Jory",
     };
-
     return myObject;
   },
 
